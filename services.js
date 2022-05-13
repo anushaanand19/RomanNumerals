@@ -1,4 +1,7 @@
 module.exports = function (num) {
+    if(!parseInt(num)) {
+        return null;
+    }
     const romanNumerals = {
         M: 1000,
         CM: 900,

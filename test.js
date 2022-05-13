@@ -1,4 +1,5 @@
 let chai = require('chai');
+const { it } = require('mocha');
 const romanNumeral = require("./services");
 var assert = chai.assert;
 
@@ -14,5 +15,9 @@ describe("GET ROMAN NUMERAL", ()=> {
         assert.equal(romanNumeral(42), 'XLII', '42 should be "XLII"')
         assert.equal(romanNumeral(55), 'LV', '55 should be "LV"')
         assert.equal(romanNumeral(98), 'XCVIII', '98 should be "XCVIII"')
+    }),
+    it('should get null for invalid input',()=> {
+        assert.equal(romanNumeral("abcdef"), null, 'abcdef should return "null"')
+        assert.equal(romanNumeral("!@34ac"), null, '!@34ac should return "null"')
     })
 })

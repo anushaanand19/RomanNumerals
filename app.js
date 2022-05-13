@@ -2,10 +2,8 @@ const express = require("express");
 const app = express();
 const romanNumeral = require("./services");
 
-app.get("/:number", (req,res,next)=>{
-    const number = req.params.number;
-    let response = romanNumeral(number);
-    res.send(response);
+app.get("/:number", (req,res)=>{
+    res.json({romanNumeral : romanNumeral(req.params.number)});
 }
 )
 if(!module.parent){ //for testing
