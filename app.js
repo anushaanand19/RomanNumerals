@@ -8,4 +8,10 @@ app.get("/:number", (req,res,next)=>{
     res.send(response);
 }
 )
-app.listen(3000);
+if(!module.parent){ //for testing
+    app.listen(3000,"127.0.0.1", () => {
+    });
+    
+}
+
+module.exports = app; //TESTING
