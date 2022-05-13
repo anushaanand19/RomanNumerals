@@ -9,7 +9,7 @@ This project converts a number into its romanNumeral.
 ```
 GET http://localhost:3000/number
 ```
-where any number can be provided
+where number = any 4 digit number
 
 ## Testing
 Run `npm run test`
